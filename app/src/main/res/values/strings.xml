@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">movie2.0</string>
+    <string name="title_activity_test">test</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_intro">intro</string>
+    <string name="title_activity_video_list">VideoListActivity</string>
+</resources>

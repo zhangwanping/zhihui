@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_study"
+        android:icon="@drawable/study"
+        android:title="学堂" />
+
+    <item
+        android:id="@+id/navigation_forum"
+        android:icon="@drawable/forum"
+        android:title="论坛" />
+
+    <item
+        android:id="@+id/navigation_admin"
+        android:icon="@drawable/admin"
+        android:title="农业管理" />
+    <item
+        android:id="@+id/navigation_user"
+        android:icon="@drawable/mine"
+        android:title="我的" />
+</menu>
