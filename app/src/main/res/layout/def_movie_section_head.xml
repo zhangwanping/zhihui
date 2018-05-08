@@ -14,8 +14,8 @@
             android:id="@+id/movie_header"
             android:layout_width="25dp"
             android:layout_height="match_parent"
-            android:paddingLeft="@dimen/dp_8"
-            android:paddingTop="@dimen/dp_8"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
             android:src="@drawable/video" />
         <TextView
             android:id="@+id/header"
