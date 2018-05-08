@@ -5,17 +5,17 @@ package com.example.nene.movie20.data;
  */
 
 public class Video {
-    private int img;
+    private String img;
     private String name;
     private String number;
 
-    public Video(int img, String name, String number){
+    public Video(String img, String name, String number){
         this.img = img;
         this.name = name;
         this.number = number;
     }
 
-    public int getImg(){
+    public String getImg(){
         return img;
     }
     public void setImg(){

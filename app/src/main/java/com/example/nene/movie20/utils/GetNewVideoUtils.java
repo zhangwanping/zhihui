@@ -1,10 +1,12 @@
 package com.example.nene.movie20.utils;
 
 import com.example.nene.movie20.Interface.GetVedioInterface;
+import com.example.nene.movie20.data.Video;
 import com.example.nene.movie20.models.Constant;
 import com.example.nene.movie20.models.VideoInf;
 
 import java.io.IOException;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -16,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class GetNewVideoUtils {
-    public static String Video;
+    public static List<VideoInf.ResultBean> Video;
     public static void getVideo() {
         //步骤4:创建Retrofit对象
         Retrofit retrofit = new Retrofit.Builder()
@@ -28,7 +30,7 @@ public class GetNewVideoUtils {
         final GetVedioInterface getVedioInterface = retrofit.create(GetVedioInterface.class);
 
         //对 发送请求 进行封装
-        final Call<VideoInf> call = getVedioInterface.getId("1", "1", "-add_time");
+        final Call<VideoInf> call = getVedioInterface.getId("1", "4", "-add_time");
 
         //步骤6:发送网络请求(同步)
         Thread thread = new Thread(new Runnable() {
@@ -36,10 +38,17 @@ public class GetNewVideoUtils {
             public void run() {
                 try {
                     Response<VideoInf> response = call.execute();
+                    Video = response.body().getResult();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         });
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
